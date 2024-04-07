@@ -19,6 +19,8 @@ def get_word_embedding_from_gpt(word):
 
 def translatePoint(point, canvasWidth, canvasHeight):
     ## Calculate canvas center
+    canvasWidth = float(canvasWidth)
+    canvasHeight = float(canvasHeight)
     centerX = canvasWidth / 2
     centerY = canvasHeight / 2
 
