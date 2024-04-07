@@ -189,6 +189,17 @@ files = [
 ]
 
 [[package]]
+name = "enchant"
+version = "0.0.1"
+description = "Easier integration with Enchant.com"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "enchant-0.0.1-py3-none-any.whl", hash = "sha256:ce4af8ff70495a12aac4b130f9ea3328ca5d9489c328ce948aef5e583905fa4d"},
+    {file = "enchant-0.0.1.tar.gz", hash = "sha256:d690fb6b709f6bfbf5ffa533226ced29050f99e4d3890eef957595753bc1e24d"},
+]
+
+[[package]]
 name = "filelock"
 version = "3.13.3"
 description = "A platform independent file lock."
@@ -524,6 +535,31 @@ developer = ["changelist (==0.5)", "mypy (>=1.1)", "pre-commit (>=3.2)", "rtoml"
 doc = ["myst-nb (>=1.0)", "numpydoc (>=1.7)", "pillow (>=9.4)", "pydata-sphinx-theme (>=0.14)", "sphinx (>=7)", "sphinx-gallery (>=0.14)", "texext (>=0.6.7)"]
 extra = ["lxml (>=4.6)", "pydot (>=2.0)", "pygraphviz (>=1.12)", "sympy (>=1.10)"]
 test = ["pytest (>=7.2)", "pytest-cov (>=4.0)"]
+
+[[package]]
+name = "nltk"
+version = "3.8.1"
+description = "Natural Language Toolkit"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "nltk-3.8.1-py3-none-any.whl", hash = "sha256:fd5c9109f976fa86bcadba8f91e47f5e9293bd034474752e92a520f81c93dda5"},
+    {file = "nltk-3.8.1.zip", hash = "sha256:1834da3d0682cba4f2cede2f9aad6b0fafb6461ba451db0efb6f9c39798d64d3"},
+]
+
+[package.dependencies]
+click = "*"
+joblib = "*"
+regex = ">=2021.8.3"
+tqdm = "*"
+
+[package.extras]
+all = ["matplotlib", "numpy", "pyparsing", "python-crfsuite", "requests", "scikit-learn", "scipy", "twython"]
+corenlp = ["requests"]
+machine-learning = ["numpy", "python-crfsuite", "scikit-learn", "scipy"]
+plot = ["matplotlib"]
+tgrep = ["pyparsing"]
+twitter = ["twython"]
 
 [[package]]
 name = "numpy"
@@ -1898,4 +1934,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "5ad51d34040cc56ccab5b91aa606ffd35f3b54390d0bc2b642b26451c6e09175"
+content-hash = "f5b20d4a7248b9a5e795518ce28e4938afffcffaf6ed3ecd88ceb99c42149319"

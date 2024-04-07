@@ -17,6 +17,8 @@ sentence-transformers = "^2.6.1"
 torch = "^2.2.2"
 transformers = "^4.39.3"
 pyenchant = "^3.2.2"
+enchant = "^0.0.1"
+nltk = "^3.8.1"
 
 
 [build-system]
