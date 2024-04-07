@@ -1,8 +1,6 @@
 from client import get_client
 import json 
-import enchant
-
-d = enchant.Dict("en_US")
+# from nltk.corpus import words
 
 def read_embeddings():
     with open('embeddings.json', 'r') as f:
@@ -21,8 +19,8 @@ def get_word_embedding_from_gpt(word):
 def get_word_embedding(word):
     if word == "":
         return None
-    if not d.check(word):
-        return None
+    # if not word in words.words():
+    #     return None
     
     embeddings = read_embeddings()
     try:
