@@ -9,6 +9,13 @@ readme = "README.md"
 python = "^3.12"
 flask = "^3.0.2"
 gunicorn = "^21.2.0"
+openai = "^1.16.2"
+pandas = "^2.2.1"
+scikit-learn = "^1.4.1.post1"
+tiktoken = "^0.6.0"
+sentence-transformers = "^2.6.1"
+torch = "^2.2.2"
+transformers = "^4.39.3"
 
 
 [build-system]
