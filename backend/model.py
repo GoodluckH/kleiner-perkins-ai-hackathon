@@ -1,6 +1,8 @@
 from client import get_client
 import json 
 # from nltk.corpus import words
+import nltk
+from nltk.corpus import wordnet
 
 def read_embeddings():
     with open('embeddings.json', 'r') as f:
@@ -19,8 +21,9 @@ def get_word_embedding_from_gpt(word):
 def get_word_embedding(word):
     if word == "":
         return None
-    # if not word in words.words():
-    #     return None
+    nltk.download('wordnet')
+    if not wordnet.synsets(word):
+        return None
     
     embeddings = read_embeddings()
     try:
