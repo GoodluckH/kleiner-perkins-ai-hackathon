@@ -1,21 +1,39 @@
 from client import get_client
-# import pandas as pd
-# import numpy as np
-# from sklearn.decomposition import PCA
-# import tiktoken
-# from sentence_transformers import SentenceTransformer
-# import torch.nn.functional as F
-# from transformers import AutoTokenizer, AutoModel
-# import torch
+import json 
+import enchant
+
+d = enchant.Dict("en_US")
+
+def read_embeddings():
+    with open('embeddings.json', 'r') as f:
+        embeddings = json.load(f)
+    return embeddings
+
+def get_word_embedding_from_gpt(word):
+    client = get_client()
+    response = client.embeddings.create(
+        model="text-embedding-3-small", input=word, encoding_format="float", dimensions=2
+    )
+    embedding = response.data[0].embedding
+    return embedding
 
 
-client = get_client()
-word = "house"
-response = client.embeddings.create(
-    model="text-embedding-3-small", input=word, encoding_format="float", dimensions=2
-)
-embedding = response.data[0].embedding
-print(word, " embedding",embedding)
+def get_word_embedding(word):
+    if word == "":
+        return None
+    if not d.check(word):
+        return None
+    
+    embeddings = read_embeddings()
+    try:
+        return embeddings[word]
+    except:
+        word_embedding = get_word_embedding_from_gpt(word)
+        embeddings[word] = word_embedding
+        with open('embeddings.json', 'w') as f:
+            json.dump(embeddings, f)
+        return word_embedding
 
 
+# get_word_embedding(word="catch")
 
