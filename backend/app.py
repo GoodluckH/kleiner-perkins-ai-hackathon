@@ -16,6 +16,8 @@ def home():
 )
 def process_word():
     word = request.args.get('word', '')
-    embedding = get_word_embedding(word)
+    width = request.args.get('width', 1000)
+    height = request.args.get('height', 500)
+    embedding = get_word_embedding(word, width, height)
     return jsonify({"word": word, "embedding": embedding})
 
