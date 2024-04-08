@@ -19,6 +19,7 @@ transformers = "^4.39.3"
 pyenchant = "^3.2.2"
 enchant = "^0.0.1"
 nltk = "^3.8.1"
+python-dotenv = "^1.0.1"
 
 
 [build-system]

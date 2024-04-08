@@ -1,8 +1,10 @@
 from openai import OpenAI
+from dotenv import load_dotenv
+import os
 
-client = OpenAI(
-    api_key="your-api-key-here"
-)
+load_dotenv()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 
 # export client to be used in other files
 def get_client():
