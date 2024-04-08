@@ -1,0 +1,14 @@
+{
+    "startButton": {
+      "files": [
+        {
+          "type": "image",
+          "key": "startButton",
+          "url": "./src/assets/images/start-button.svg",
+          "frameConfig": {
+            "width": 100
+          }
+        }
+      ]
+    }
+  }
